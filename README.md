@@ -1,60 +1,24 @@
-# Stock Market Analysis and Trading System
+# Stock Market Analysis & Prediction
 
-A comprehensive Python-based system for stock market analysis, prediction, and automated trading strategy backtesting.
-
-## Features
-
-- **Data Loading and Processing**
-  - Multiple stock symbols and time periods support
-  - Technical indicators calculation
-  - Advanced market indicators
-  - Data preprocessing and normalization
-
-- **Multiple Models**
-  - LSTM (Long Short-Term Memory) for sequence prediction
-  - Traditional ML model using technical indicators
-  - Trend direction prediction
-  - Model hyperparameter tuning
-
-- **Trading Strategy**
-  - Combined signals from multiple models
-  - Backtesting functionality
-  - Transaction costs consideration
-  - Portfolio performance metrics
+A comprehensive stock market analysis tool with live predictions and interactive visualization.
 
 ## Project Structure
-src/
-
-├── data/
-
-│ ├── data_loader.py # Stock data loading
-
-│ └── preprocessor.py # Data preprocessing
-
-├── features/
-
-│ ├── technical_indicators.py # Basic indicators
-
-│ └── advanced_indicators.py # Advanced indicators
-
-├── models/
-
-│ ├── lstm_model.py # LSTM implementation
-
-│ ├── traditional_model.py # Technical analysis model
-
 │ ├── trend_predictor.py # Trend prediction
-
 │ └── model_tuner.py # Hyperparameter tuning
-
 ├── analysis/
-
 │ └── backtester.py # Strategy backtesting
-
 └── visualization/
-
 └── plots.py # Data visualization
 
+## Features
+- Live stock data analysis and prediction
+- Interactive web interface using Streamlit
+- Multiple prediction models:
+  - LSTM for price prediction
+  - Random Forest for trend prediction
+  - Technical indicators analysis
+- Real-time visualization with Plotly
+- Customizable prediction timeframes
 
 ## Installation
 
@@ -74,21 +38,36 @@ source venv/bin/activate # On Windows: venv\Scripts\activate
 
 bash
 pip install -r requirements.txt
+
 ## Usage
 
-1. Basic usage:
+1. Run the Streamlit interface:
+
+bash
+streamlit run src/app.py
+
+2. Using the web interface:
+   - Enter a stock symbol (e.g., 'AAPL' for Apple)
+   - Adjust prediction days using the slider
+   - Click "Analyze" to view:
+     - Live price charts
+     - Price predictions
+     - Technical indicators
+     - Trend analysis
+
+3. For programmatic usage:
 
 python
 from src.main import main
 main()
 
-2. Custom parameters:
+4. Custom parameters:
+
 python
 Initialize parameters
 tickers = ['AAPL', 'MSFT'] # Stock symbols
 periods = ['2y', '5y'] # Time periods
 sequence_length = 60 # For LSTM prediction
-
 
 ## Models
 
@@ -103,9 +82,20 @@ sequence_length = 60 # For LSTM prediction
 - Price prediction based on market indicators
 
 ### Trend Predictor
-- Classification model for trend direction
-- Feature engineering for trend prediction
-- Accuracy and classification metrics
+- Classification-based approach
+- Predicts market direction
+- Uses technical indicators as features
+
+## Web Interface
+The Streamlit interface provides:
+- Real-time stock data visualization
+- Interactive charts and indicators
+- Price predictions and trend analysis
+- Customizable analysis parameters
+- Three main views:
+  1. Price Analysis
+  2. Predictions
+  3. Technical Indicators
 
 ## Technical Indicators
 
@@ -139,9 +129,4 @@ The backtesting system includes:
 MIT License
 
 ## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a new Pull Request
+Feel free to submit issues, fork the repository, and create pull requests for any improvements.
